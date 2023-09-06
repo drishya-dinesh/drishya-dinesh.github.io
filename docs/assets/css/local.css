@@ -1,0 +1,147 @@
+$gutter: 30px;
+$border-width: 4px;
+$dot-diameter: 8px;
+
+body {
+  background: linear-gradient(55deg, #4e75b9 30%, #5cbf98 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 12vh 100px;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.timeline {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  padding: 100px 50px;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: calc(33% + 15px); //$gutter/2
+    bottom: 0px;
+    width: $border-width;
+    background: #ddd;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.entry {
+  clear: both;
+  text-align: left;
+  position: relative;
+
+  .title {
+    margin-bottom: 0.5em;
+    float: left;
+    width: 33%;
+    padding-right: $gutter;
+    text-align: center;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: $dot-diameter;
+      height: $dot-diameter;
+      border: $border-width solid #339999;
+      background-color: #fff;
+      border-radius: 100%;
+      top: 15%;
+      right: -$dot-diameter;
+      z-index: 99;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 120%;
+    }
+
+    p {
+      margin: 0;
+      font-size: 100%;
+    }
+  }
+
+  .body {
+    margin: 0 0 3em;
+    float: right;
+    width: 66%;
+    padding-left: $gutter;
+
+    p {
+      line-height: 1.4em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    ul {
+      color: #aaa;
+      padding-left: 0;
+      list-style-type: none;
+
+      li:before {
+        content: " ";
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
+
+.contents {
+  padding: 0px 30px;
+  border-left: 2px solid #bababa;
+}
+
+.box {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin-bottom: 20px;
+}
+
+.box:hover {
+  box-shadow: 0px 3px 12px 0px #ccc;
+  border: 1px solid transparent;
+}
+
+.box::before {
+  content: " ";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  right: calc(100% + 22px);
+  top: 0;
+  background-color: #339999;
+  border: 2px solid white;
+}
+
+@media (max-width: 780px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
