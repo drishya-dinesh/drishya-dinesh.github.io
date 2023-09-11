@@ -71,18 +71,18 @@
 				triggerOnce: true
 			});
 
-			$('.mu-photoshop-bar').LineProgressbar({
-				percentage: 85,
+			$('.mu-javascript-bar').LineProgressbar({
+				percentage: 75,
 				triggerOnce: true
 			});
 
-			$('.mu-wordpress-bar').LineProgressbar({
-				percentage: 80,
+			$('.mu-python-bar').LineProgressbar({
+				percentage: 78,
 				triggerOnce: true
 			});
 
-			$('.mu-jquery-bar').LineProgressbar({
-				percentage: 55,
+			$('.mu-angular-bar').LineProgressbar({
+				percentage: 88,
 				triggerOnce: true
 			});
 
